@@ -1,1 +1,5 @@
-<h1>Hello Room Page</h1>
+@extends('layouts.header')
+@section('title',content: 'Room Profile')
+@section('content')
+    <h2>Hello My Rooms  Profile</h2>
+@endsection

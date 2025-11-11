@@ -1,30 +1,23 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\pagesController;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+Route::get('/', [pagesController::class, 'home'])->name('home');
 
-Route::get('about', function(){
-    return view('about');
-})->name('about');
+// Route::get('/', function () {
+//     return view('welcome');
+// })->name('home');
 
-Route::get('contact', function(){
-    return view('contact');
-})->name('contact');
+Route::get('about', [pagesController::class,'about'])->name('about');
 
-Route::get('room',function(){
-    return view('room');
-})->name('room');
+Route::get('contact', [pagesController::class,'contact'])->name('contact');
 
-Route::get('rooms', function(){
-    return view(('rooms'));
-})->name('rooms');
+Route::get('room',[pagesController::class,'room'])->name('room');
 
-Route::get('checkout', function(){
-    return view('checkout');
-})->name('checkout');
+Route::get('rooms', [pagesController::class,'rooms'])->name('rooms');
+
+Route::get('checkout', [pagesController::class,'checkout'])->name('checkout');
 
 Auth::routes();
 

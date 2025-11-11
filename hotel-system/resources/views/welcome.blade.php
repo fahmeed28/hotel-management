@@ -1,2 +1,5 @@
-<h4>Hello Fahmeed shahzad gull</h4>
-<h1>Welcome Bro</h1>
+@extends('layouts.header')
+@section('title',content: 'Home')
+@section('content')
+    <h2>Hello My Home page And Welcome file</h2>
+@endsection
