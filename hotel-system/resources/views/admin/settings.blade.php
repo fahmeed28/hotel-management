@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title',content:'Analytics')
+@section('title',content:'Settings')
 @section('content')
-Hello analytics
+Hello settings 
 @endsection

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title') | Hotel System</title>
     {{-- css filse lik --}}
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
 
 
     <!-- Bootstrap 5 -->
@@ -44,26 +44,66 @@
 
         /* Footer Styling */
         
-        footer {
-            background-color: #212529;
-            color: #ddd;
-            padding: 5px 0;
-            text-align: center;
-        }
-        footer a {
-            color: #ddd;
-            margin: 0 10px;
-            font-size: 20px;
-            transition: 0.3s;
-        }
-        footer a:hover {
-            color: #0d6efd;
-        }
-        footer p {
-            margin-top: 15px;
-            font-size: 14px;
-            color: #aaa;
-        }
+       /* Footer Full Styling */
+.footer-section {
+    background: #212529;
+    color: #ddd;
+    
+}
+
+.footer-title {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li,
+.footer-contact li {
+    margin-bottom: 8px;
+}
+
+.footer-links li a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-links li a:hover {
+    color: #0d6efd;
+}
+
+.footer-contact li i {
+    margin-right: 10px;
+    color: #0d6efd;
+}
+
+.social-links a {
+    color: #ddd;
+    font-size: 20px;
+    margin-right: 12px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #0d6efd;
+}
+
+.footer-hr {
+    border-top: 1px solid #444;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #999;
+}
+
 
         /* Page Container */
         .page-container {
@@ -113,17 +153,60 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            {{-- <div>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-            </div> --}}
-            <p>&copy; {{ date('Y') }} | Designed by <strong>Fahmeed Shahzad</strong>. All Rights Reserved.</p>
+  <!-- Full Footer -->
+<footer class="footer-section mt-5">
+    <div class="container py-5">
+
+        <div class="row">
+
+            <!-- About Hotel -->
+            <div class="col-md-4 mb-3">
+                <h5 class="footer-title">HotelSystem</h5>
+                <p>
+                    HotelSystem is a modern online platform where you can book rooms, view hotel details, and connect with customer support.
+                </p>
+                <div class="social-links mt-3">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-3">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ route('about') }}">About</a></li>
+                    <li><a href="{{ url('/rooms') }}">Rooms</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    <li><a href="{{ route('login') }}">Login</a></li>
+                    <li><a href="{{ route('register') }}">Register</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="col-md-4 mb-3">
+                <h5 class="footer-title">Contact Us</h5>
+                <ul class="footer-contact">
+                    <li><i class="fa-solid fa-location-dot"></i> Lahore, Pakistan</li>
+                    <li><i class="fa-solid fa-phone"></i> +92 300 1234567</li>
+                    <li><i class="fa-solid fa-envelope"></i> support@hotelsystem.com</li>
+                </ul>
+            </div>
         </div>
-    </footer>
+
+        <hr class="footer-hr">
+
+        <div class="text-center pt-2">
+            <p class="footer-copy">
+                &copy; {{ date('Y') }} HotelSystem. Designed by <strong>Fahmeed Shahzad</strong>. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
